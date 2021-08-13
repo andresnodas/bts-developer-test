@@ -3,6 +3,7 @@ package intersolusi.teknologi.asia.controller;
 import java.util.List;
 
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,12 +32,12 @@ public class UserController {
 	}
 	
 	@PostMapping(path = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public SignInResponse userSignUp(@RequestBody UserRequest request) throws JsonProcessingException {
+	public SignInResponse userSignUp(@Validated @RequestBody UserRequest request) throws JsonProcessingException {
 		return userService.userSignUp(request);
 	}
 	
 	@PostMapping(path = "/signin", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public SignInResponse userSignIn(@RequestBody SignInRequest request) throws JsonProcessingException {
+	public SignInResponse userSignIn(@Validated @RequestBody SignInRequest request) throws JsonProcessingException {
 		return userService.userSignIn(request);
 	}
 	

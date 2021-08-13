@@ -1,5 +1,8 @@
 package intersolusi.teknologi.asia.model;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
@@ -9,11 +12,14 @@ import lombok.Setter;
 @Setter
 public class UserModel {
 
+	@NotEmpty
 	private String username;
 
+	@NotEmpty
 	@JsonProperty("encrypted_password")
 	private String password;
 
+	@Email
 	private String email;
 
 	private String phone;
@@ -24,6 +30,7 @@ public class UserModel {
 
 	private String postcode;
 
+	@NotEmpty
 	private String name;
 
 	private String address;

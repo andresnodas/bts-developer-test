@@ -15,6 +15,7 @@ import intersolusi.teknologi.asia.model.GenericResponse;
 import intersolusi.teknologi.asia.model.request.ShoppingRequest;
 import intersolusi.teknologi.asia.model.response.ShoppingResponse;
 import intersolusi.teknologi.asia.service.ShoppingService;
+import intersolusi.teknologi.asia.utils.GenericResponseHelper;
 import lombok.AllArgsConstructor;
 
 @RestController
@@ -49,7 +50,7 @@ public class ShoppingController {
 		
 		shoppingService.deleteShopping(id);
 		
-		return new GenericResponse<>();
+		return GenericResponseHelper.ok();
 	}
 	
 	
